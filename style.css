@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+				  H E A D E R 
+	 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+/* =====================================
+.header-top
+======================================== */
+.header-top__background {
+  width: 100%;
+  background-color: #30302e;
+}
+
+.header-top__width {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header-top__nav {
+  width: 1140px;
+  height: 41px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header-top__nav li {
+  list-style: none;
+}
+
+.nav__one,
+.nav__two,
+.nav__three {
+  margin-right: 35px;
+}
+
+.nav__five {
+  flex-grow: 1;
+}
+
+.header-top__nav li a {
+  font: 14px / normal "Proxima Nova Rg";
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ======================================
+ header__middle
+====================================== */
+.header-middle__background {
+  width: 100%;
+  background-color: #fcd106;
+}
+
+.header-middle__width {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.header-middle__content {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-middle__logo {
+  flex: 0 0 25%;
+}
+
+.header-middle__search {
+  flex: 0 0 50%;
+}
+
+.search__block {
+  display: flex;
+}
+
+input {
+  flex: 0 0 75%;
+  border: 1px solid #e1bc0b;
+  padding: 11px 17px;
+}
+
+button {
+  flex: 0 0 25%;
+  padding: 12px 0 12px 25px;
+  border: none;
+  color: #fcf4f4;
+  background-color: #ce0000;
+  background-image: url(./images/icons/zoom_search.png);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 25% center;
+  cursor: pointer;
+}
+
+/* =========================================
+.header-middle__contact
+============================================ */
+.header-middle__contact {
+  font: 14px "Proxima Nova Rg";
+  flex: 0 0 16.6%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+}
+
+.header-middle__contact .clock {
+  color: #343331;
+}
+
+.header-middle__contact .tel {
+  font: 28px "Proxima Nova Lt";
+}
+
+.header-middle__contact .tel a {
+  color: #343331;
+  text-decoration: none;
+}
+
+.header-middle__contact .tel span,
+.header-middle__contact .callback {
+  color: #cf0000;
+}
+
+.header-middle__contact .callback a {
+  color: #cf0000;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.header-middle__contact .clock,
+.header-middle__contact .tel,
+.header-middle__contact .callback {
+  line-height: 1;
+}
+
+.header-middle__contact .tel a:hover {
+  color: #cf0000;
+}
+
+.header-middle__contact .tel a:hover span {
+  color: #343331;
+}
+
+.header-middle__contact .callback a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #f1ad04;
+  position: absolute;
+  bottom: 0.5px;
+}
+
+/* ==================================
+ .header-bottom
+ =================================== */
+.header-bottom__background {
+  width: 100%;
+  background-color: #f6f5f3;
+}
+
+.header-bottom__nav {
+  width: 1140px;
+  height: 41px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-bottom__nav li {
+  list-style: none;
+}
+
+.header-bottom__nav li:nth-child(-n + 9):hover::before {
+  content: " ";
+  background-image: url(./images/icons/arrow_icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  background-size: 8px;
+  padding-right: 9px;
+  margin-right: 5px;
+}
+
+.header-bottom__nav li:nth-child(-n + 8) {
+  margin-right: 35px;
+}
+
+.header-bottom__nav li:nth-child(10) {
+  flex-grow: 1;
+}
+
+.header-bottom__nav li:nth-child(11) img {
+  width: 19px;
+  height: 16px;
+  padding: 6px 10px 0 0;
+}
+
+.header-bottom__nav li a {
+  font: 14px "Proxima Nova Rg";
+  text-decoration: none;
+  color: rgb(28, 27, 26);
+  text-shadow: 0.5px 0.5px 1px #ccc;
+}
+
+/*  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+				  M A I N 
+	 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.main__container {
+  width: 1170px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: tan;
+}
+
+main {
+  width: 1140px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: thistle;
+}
