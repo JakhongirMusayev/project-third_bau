@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font: 14px "Proxima Nova Rg";
+  color: #1c1b1a;
+}
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 ul li {
-	list-style: none;
+  list-style: none;
 }
 
 /*  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
@@ -17,7 +21,7 @@ ul li {
 .header-top
 ======================================== */
 header {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 .header-top__background {
   width: 100%;
@@ -47,7 +51,6 @@ header {
 }
 
 .header-top__nav li a {
-  font: 14px / normal "Proxima Nova Rg";
   color: #ffffff;
 }
 
@@ -108,7 +111,6 @@ button[type~="submit"] {
 ============================================ */
 
 .header-middle__contact {
-  font: 14px "Proxima Nova Rg";
   flex: 0 0 16.6%;
   margin-left: auto;
   display: flex;
@@ -154,16 +156,28 @@ button[type~="submit"] {
   color: #343331;
 }
 
+.header-middle__contact .callback a {
+  color: #ce0000;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
 .header-middle__contact .callback a::after {
   content: "";
   display: block;
   height: 1px;
-  width: 100%;
-  background-color: #f1ad04;
+  width: 0;
+  background-color: red;
   position: absolute;
-  bottom: 0.5px;
+  bottom: 0;
+  right: 0;
+  transition: 0.3s all ease;
 }
-
+.header-middle__contact .callback a:hover::after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
 /* ==================================
  .header-bottom
  =================================== */
@@ -181,13 +195,13 @@ button[type~="submit"] {
   flex-direction: row;
   align-items: center;
 }
-
-.header-bottom__nav li {
-  list-style: none;
-}
-
-.header-bottom__nav li:nth-child(-n + 9):hover::before,
-aside .aside-ul li:hover::before {
+/* .header-bottom__nav li:nth-child(-n + 9),
+aside .aside-ul li {
+  padding-right: 10px;
+  
+} */
+.header-bottom__nav li:nth-child(-n + 9)::before,
+aside .aside-ul li::before {
   content: " ";
   background-image: url(./images/icons/arrow_icon.png);
   background-repeat: no-repeat;
@@ -195,6 +209,15 @@ aside .aside-ul li:hover::before {
   background-size: 8px;
   padding-right: 9px;
   margin-right: 5px;
+  opacity: 0;
+  transition: 0.3s all ease;
+  transform: translate(0, 0);
+}
+
+.header-bottom__nav li:nth-child(-n + 9):hover::before,
+aside .aside-ul li:hover::before {
+  opacity: 1;
+  transform: translate(-5px, 0);
 }
 
 .header-bottom__nav li:nth-child(-n + 8) {
@@ -213,7 +236,6 @@ aside .aside-ul li:hover::before {
 
 .header-bottom__nav li a,
 .aside-ul li a {
-  font: 14px "Proxima Nova Rg";
   color: rgb(28, 27, 26);
   text-shadow: 0.5px 0.5px 1px #ccc;
 }
@@ -240,68 +262,81 @@ aside {
 }
 
 .catalog {
-	width: 263px;
-	height: 40px;
-	border-left: 3px solid #cf0000;
-	display: flex;
-	align-items: center;
-	margin-bottom: 30px;
+  width: 263px;
+  height: 40px;
+  border-left: 3px solid #cf0000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .catalog-text {
-	padding-left: 15px;
+  padding-left: 15px;
 }
 .aside-ul li {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .aside-ul li:last-child {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .aside-ul li a {
-	color: #1c1b1a;
+  color: #1c1b1a;
 }
 aside a img:only-child {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .subscribe h2 {
-	margin-bottom: 17px;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: "Proxima Nova Lt";
+  margin-bottom: 17px;
 }
 .subscribe p:nth-of-type(1) {
-	margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Proxima Nova Lt";
+  color: #696969;
+  margin-bottom: 30px;
 }
 form {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-input[id~="text"], input[id~="email"] {
-	border: 1px solid #cecece;
-	margin-bottom: 20px;
-	padding: 15px;
-	width: 169px;
-	outline: none;
+input[id~="text"],
+input[id~="email"] {
+  border: 1px solid #cecece;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 169px;
+  outline: none;
 }
-input[id~="text"]::placeholder, input[id~="email"]::placeholder {
-	color: #838383;
+input[id~="text"]::placeholder,
+input[id~="email"]::placeholder {
+  color: #838383;
+  font-size: 14px;
+  font-family: "Proxima Nova Rg";
+  line-height: 24px;
 }
 .sub-subscribe {
-	background-color: #fff;
-	outline: none;
-	color: #1c1b1a;
-	margin-bottom: 20px;
-	padding: 15px 61px;
-	border: 1px solid black;
-	width: 200px
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Proxima Nova Lt";
+  background-color: #fff;
+  outline: none;
+  color: #1c1b1a;
+  margin-bottom: 20px;
+  padding: 15px 61px;
+  border: 1px solid #aaaaaa;
+  width: 200px;
 }
 .sub-subscribe:hover {
-	background-color: #fcd106;
-	border: none;
-	cursor: pointer;
-	padding: 16px;
+  background-color: #fcd106;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
 }
-
 
 .content {
   flex: 0 0 75%;
-  /* border: 1px dotted blue; */
 }
 /* ======= banner-top ======= */
 .banner-top {
@@ -309,6 +344,7 @@ input[id~="text"]::placeholder, input[id~="email"]::placeholder {
   display: flex;
   justify-content: space-between;
   margin-bottom: 65px;
+  position: relative;
 }
 .banner-top a {
   background-repeat: no-repeat;
@@ -318,6 +354,25 @@ input[id~="text"]::placeholder, input[id~="email"]::placeholder {
 }
 .banner-top a:last-child {
   flex: 0 0 360px;
+}
+.banner-top p {
+  font-size: 32px;
+  color: #fff;
+  position: absolute;
+  top: 58px;
+  right: 33px;
+}
+.banner-top button {
+  position: absolute;
+  right: 170px;
+  bottom: 55px;
+  background-color: #fcd106;
+  outline: none;
+  border: none;
+  padding: 15px 25px;
+  font-size: 14px;
+  font-family: "Proxima Nova Lt";
+  cursor: pointer;
 }
 
 /* ======= banner-middle ======= */
@@ -355,226 +410,384 @@ input[id~="text"]::placeholder, input[id~="email"]::placeholder {
  ============================================== */
 /* ======= share-container ======= */
 .shares-container {
-	/* border: 1px dotted red; */
-	flex: 0 0 847px;
-	height: 40px;
-	display: flex;
-	border-left: 3px solid #cf0000;
-	height: 40px;
-	margin-bottom: 30px;
+  flex: 0 0 847px;
+  height: 40px;
+  display: flex;
+  border-left: 3px solid #cf0000;
+  height: 40px;
+  margin-bottom: 30px;
 }
 .shares-products {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 .shares-products .shares {
-	margin: 0 60px 0 15px;
-	font-size: 18px;
-	color: #4f4f4e;
+  margin: 0 60px 0 15px;
+  font-size: 18px;
+  color: #4f4f4e;
 }
 select {
-	height: 40px;
-	outline: none;
-	border: 1px solid #aaa9a3;
-	cursor: pointer;
-	padding: 0 40px 0 14px;
-	appearance: none;
-	background-image: url(./images/img/arrow-bottom.png);
-	background-repeat: no-repeat;
-	background-position: 100px 17px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #aaa9a3;
+  cursor: pointer;
+  padding: 0 40px 0 14px;
+  appearance: none;
+  background-image: url(./images/img/arrow-bottom.png);
+  background-repeat: no-repeat;
+  background-position: 100px 17px;
 }
 .shares-container_grow {
-	flex: 1 0 0;
+  flex: 1 0 0;
 }
 .slider-button {
-	display: flex;
+  display: flex;
 }
-.button-left, .button-right {
-	width: 40px;
-	height: 40px;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: 1px solid black;
-	outline: none;
+.button-left,
+.button-right {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  outline: none;
 }
-.button-left:hover, .button-right:hover {
-	background-color: #fcd106;
-	cursor: pointer;
-	border: none;
+.button-left:hover,
+.button-right:hover {
+  background-color: #fcd106;
+  cursor: pointer;
+  border: none;
 }
 .button-left {
-	background-image: url(./images/img/arrow-left.png);
+  background-image: url(./images/img/arrow-left.png);
 }
 .button-right {
-	background-image: url(./images/img/arrow-right.png);
-	margin-left: 30px;
+  background-image: url(./images/img/arrow-right.png);
+  margin-left: 30px;
 }
-
-
 
 /* ======= product-element ======= */
-.main-content {
-	flex: 0 0 75%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+section.main-content {
+  flex: 0 0 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 .product-slider {
-	width: 31%;
+  width: 31%;
 }
+
 .product-item {
-	border: 1px solid #e8e8e8;
-	flex: 0 0 30%;
-	padding: 5% 9%;
-	/* margin: 3%; */
-	/* position: relative; */
+  border: 1px solid #e8e8e8;
+  flex: 0 0 30%;
+  padding: 5% 9%;
+  position: relative;
+  transition: 0.3s all ease;
 }
-/*
-.category-title {
-	display: block;
-	padding: 10px 30px 10px 20px;
-	position: absolute;
-	background-image: url(./images/img/flajok-3.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	left: 0;
-	top: 45px;
-} */
 
+.product-item:hover {
+  box-shadow: 0 3px 7px rgba(28, 27, 26, 0.35);
+}
 
+.product-item .category-title {
+  display: block;
+  padding: 11px 31px 10px 19px;
+  position: absolute;
+  background-image: url(./images/img/flajok-3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #ffffff;
+  left: 0;
+  top: 45px;
+  background-position: center;
+}
+.product-item .rasp {
+  background-image: url(./images/img/flajok-2.png);
+}
+.product-item .empty {
+  background-image: none;
+}
+.product-item .nov {
+  padding: 13px 31px 15px 19px;
+}
+.product-articul {
+  color: #898181;
+  line-height: 24px;
+  position: absolute;
+}
+.product-image {
+  margin-top: 5%;
+}
+.product-name {
+  margin-bottom: 20px;
+}
+.product-name a {
+  font-size: 18px;
+  line-height: 24px;
+  color: #1c1b1a;
+}
+.product-name a:hover {
+  color: #cf0000;
+  border-bottom: 1px solid #f1c8c8;
+}
+.product-price {
+  position: relative;
+  margin-bottom: 15px;
+}
+.product-price .new-price {
+  margin-bottom: 11px;
+}
+.product-price .new-price,
+.old-price {
+  font-size: 22px;
+  font-family: "Proxima Nova Lt";
+  line-height: 24px;
+  font-weight: 600;
+}
+.product-price .old-price {
+  color: #949392;
+}
+.product-price .club-card {
+  line-height: 18px;
+  text-shadow: 0.5px 0.5px 1px #ccc;
+  position: absolute;
+  top: -11%;
+  right: 9%;
+}
+.product-action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product-action .add-to-cart a {
+  display: inline-block;
+  padding: 14px 20px 14px 40px;
+  background-color: #eac204;
+  background-image: url(./images/img/addToCart.png);
+  background-repeat: no-repeat;
+  background-position: 13% 183%;
+}
+.product-action .add-to-cart a:hover {
+  background-position: 13% -100%;
+  text-shadow: 0.1px 0.1px 0.5px #000000;
+}
+.counter {
+  position: relative;
+  margin-bottom: 20px;
+}
+.counter input {
+  width: 28px;
+  padding: 14px 16px;
+  outline: none;
+  border: 1px solid #e8e8e8;
+}
+.counter::before {
+  content: "+";
+  display: block;
+  position: absolute;
+  font-size: 18px;
+  font-family: "Proxima Nova Rg";
+  font-weight: bold;
+  color: #938b8b;
+  top: 3px;
+  right: 10px;
+}
+.counter::after {
+  content: "-";
+  display: block;
+  position: absolute;
+  font-size: 18px;
+  font-family: "Proxima Nova Rg";
+  font-weight: bold;
+  color: #938b8b;
+  right: 11px;
+  bottom: 3px;
+}
+.add-to-compare a {
+  color: #898181;
+  line-height: 18px;
+}
+.add-to-compare a:hover {
+  color: #1c1b1a;
+  border-bottom: 1px solid #d6d6d6;
+}
 
 /* ===========================================
 content-bottom
 ============================================== */
 .content-bottom {
-	width: 1140px;
-	margin: 0 auto;
-	margin-bottom: 100px;
+  width: 1140px;
+  margin: 0 auto;
+  margin-bottom: 100px;
 }
 .content-buttons {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 45px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 45px;
 }
-.content-buttons button:nth-child(-n+3) {
-	margin-right: 20px;
+.content-buttons button:nth-child(-n + 3) {
+  margin-right: 20px;
 }
-.content-buttons .one, .two, .three, .four {
-	width: 25px;
-	height: 25px;
-	background-color: #fff;
-	border: 1px solid #e8e8e8;
-	outline: none;
+.content-buttons .one,
+.two,
+.three,
+.four {
+  font-size: 14px;
+  /* line-height: 40px; */
+  font-family: "Proxima Nova Rg";
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  outline: none;
 }
-.content-buttons .one:hover, .two:hover, .three:hover, .four:hover {
-	background-color: #fcd106;
-	cursor: pointer;
-	border: none;
+.content-buttons .one:hover,
+.two:hover,
+.three:hover,
+.four:hover {
+  background-color: #fcd106;
+  cursor: pointer;
+  border: none;
 }
 .content-text h3 {
-	margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: "Proxima Nova Lt";
+  color: #1c1b1a;
+  margin-bottom: 20px;
+}
+.content-text p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #5d5d5c;
 }
 
 /* ======= inform ======= */
 .inform-bg {
-	background-color: #fcd106;
+  background-color: #fcd106;
 }
 .inform {
-	width: 1140px;
-	height: 250px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 1140px;
+  padding: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.assortiment, .quality, .delivery, .purchase-returns {
-	width: 263px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+.assortiment,
+.quality,
+.delivery,
+.purchase-returns {
+  width: 263px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.assortiment img, .quality img, .delivery img, .purchase-returns img {
-	margin-bottom: 25px;
+.assortiment img,
+.quality img,
+.delivery img,
+.purchase-returns img {
+  margin-bottom: 25px;
 }
-.assortiment h4, .quality h4, .delivery h4, .purchase-returns h4 {
-	color: #1c1b1a;
-	margin-bottom: 20px;
+.assortiment h4,
+.quality h4,
+.delivery h4,
+.purchase-returns h4 {
+  color: #1c1b1a;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Proxima Nova Lt";
+  margin-bottom: 20px;
+}
+.assortiment p,
+.quality p,
+.delivery p,
+.purchase-returns p {
+  line-height: 24px;
 }
 
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 					 F O O T E R							
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 .footer-bg {
-	background-color: #30302e;
+  background-color: #30302e;
 }
 footer {
-	width: 1140px;
-	height: 513px;
-	margin: 0 auto;
-	padding-top: 50px;
-	display: flex;
-	align-items: flex-start;
+  width: 1140px;
+  height: 513px;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  align-items: flex-start;
 }
 .for-customer {
-	flex: 0 0 25%;
+  flex: 0 0 25%;
 }
 .personal-area {
-	flex: 0 0 16%;
+  flex: 0 0 16%;
 }
 .information {
-	flex: 0 0 25%;
+  flex: 0 0 25%;
 }
 .contact-us {
-	flex: 0 0 34%;
+  flex: 0 0 34%;
 }
-.for-customer  h4, .personal-area h4,
-.information h4, .contact-us h4 {
-	color: #e0e0e0;
-	margin-bottom: 25px;
+.for-customer h4,
+.personal-area h4,
+.information h4,
+.contact-us h4 {
+  color: #e0e0e0;
+  margin-bottom: 25px;
 }
-.for-customer  ul li, .personal-area ul li,
+.for-customer ul li,
+.personal-area ul li,
 .information ul li {
-	margin-bottom: 25px;
+  margin-bottom: 25px;
 }
-.for-customer  ul li a, .personal-area ul li a,
-.information ul li a, .contact-us p {
-	color: #949491;
+.for-customer ul li a,
+.personal-area ul li a,
+.information ul li a,
+.contact-us p {
+  color: #949491;
 }
 .contact-us p:nth-of-type(1) {
-	margin-bottom: 30px;
-	line-height: 26px;
+  margin-bottom: 30px;
+  line-height: 26px;
 }
-.phone-icon, .email-icon {
-	display: flex;
-	align-items: start;
+.phone-icon,
+.email-icon {
+  display: flex;
+  align-items: start;
 }
 .phone-icon {
-	margin-bottom: -17px;
+  margin-bottom: -17px;
 }
-.phone-icon p, .email-icon p {
-	margin-left: 20px;
-	padding-top: 3px;
+.phone-icon p,
+.email-icon p {
+  margin-left: 20px;
+  padding-top: 3px;
 }
 .phone-icon p a {
-	color: #949491;
+  color: #949491;
 }
-.phone-icon p a span{
-	color: #e0e0e0;
+.phone-icon p a span {
+  color: #e0e0e0;
 }
 .email-icon {
-	margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 .email-icon p a {
-	color: #a48a1e;
+  color: #a48a1e;
 }
 .social-networks {
-	margin-bottom: 23px;
+  margin-bottom: 23px;
 }
 .cards {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .contact-us p:nth-of-type(2) {
-	line-height: 26px;
+  line-height: 26px;
 }
